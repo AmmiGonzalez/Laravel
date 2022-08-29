@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePostPost;
 
 class PostController extends Controller
 {
@@ -36,10 +37,12 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostPost $request)
     {
         //
-        echo "Ya llegué, tengo asistencia Ammi González - 202008008";
+        //dd($request->validate());
+        Post::create($request->validated());
+        echo "El titulo trae " .$request->title;
     }
 
     /**
