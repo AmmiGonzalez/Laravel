@@ -39,9 +39,10 @@ class PostController extends Controller
      */
     public function store(StorePostPost $request)
     {
-        //
         //dd($request->validate());
         Post::create($request->validated());
+        return back()->with('status', 'El post se ha creado con éxito');
+        //return redirect('post.create')->with('status', 'Post created');
         echo "El titulo trae " .$request->title;
     }
 
