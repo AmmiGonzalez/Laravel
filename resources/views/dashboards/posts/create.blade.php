@@ -25,15 +25,16 @@
         <div class="form">
             <h1>F O R M U L A R I O</h1>
             <div class="grupo">
-                <input type="text" name="title">
-                <label class="uno" for="">Título</label> <br>
-                @error('title') 
+                <label class="uno" for="">Título</label>
+                <input type="text" name="slug">
+                <br>
+                @error('slug') 
                 <small class="error">{{$message}}</small>
                 @enderror
             </div>
             <div class="grupo">
-                <input type="text" name="slug">
                 <label class="uno" for="">URL Corta</label>
+                <input type="text" name="slug">
                 <br>
                 @error('slug') 
                 <small class="error">{{$message}}</small>
@@ -41,16 +42,16 @@
             </div>
             <div class="grupo">
                 <!-- El input es un textbox mientras que el textarea brinda un espacio para textos largos. -->
-                <textarea name="content"></textarea>
                 <label class="dos" for="">Contenido</label>
+                <textarea name="content"></textarea>
                 <br>
                 @error('content') 
                 <small class="error">{{$message}}</small>
                 @enderror
             </div>
             <div class="grupo">
-                <textarea name="description"></textarea>
                 <label class="dos" for="">Descripción</label>
+                <textarea name="description"></textarea>
                 <br>
                 @error('description') 
                 <small class="error">{{$message}}</small>
