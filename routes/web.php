@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('post', PostController::class);
+Route::resource('categories', categoriescontroller::class);
+
 Route::get('/', function () {
     return view('welcome');
-});
-Route :: resource('post', PostController::class);
-
+})->name('home');

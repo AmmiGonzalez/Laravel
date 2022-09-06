@@ -1,5 +1,20 @@
 body{
     background-color: #13141C;
-    color:white;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@300;500;600&family=Roboto:ital,wght@0,100;0,400;1,300&display=swap');
+}
+
+.grupo{
+color:white;
+}
+
+.enviar{
+border-radius: 50px;
+color:black;
 }
