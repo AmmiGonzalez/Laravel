@@ -17,7 +17,8 @@ class PostController extends Controller
     public function index()
     {
         //
-        echo("Ammi González");
+        $posts = post::orderBy('created_at', 'desc')->cursorpaginate(5);
+        echo view ('dashboards.posts.index', ['posts' => $posts]);
     }
 
     /**
