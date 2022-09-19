@@ -10,7 +10,9 @@
 </head>
 <body>
     @include('dashboards.partials.nav-header-main')
-    <form action="{{route('post.store')}}" method = "post" id="form">
+    <h1>Actualizar Post</h1> <br>
+    <form action="{{route('post.update', $posts->id)}}" method = "post" id="form">
+        @method('PUT')
     @include("dashboards.partials._form")
     </form>
 </body>

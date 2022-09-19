@@ -17,8 +17,8 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = post::orderBy('created_at', 'desc')->cursorpaginate(5);
-        echo view ('dashboards.posts.index', ['posts' => $posts]);
+        $post = post::orderBy('created_at', 'desc')->cursorpaginate(5);
+        echo view ('dashboards.posts.index', ['posts' => $post]);
     }
 
     /**
@@ -28,8 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
-        echo view ('dashboards.posts.create');
+        
+        echo view ('dashboards.posts.create', ["posts"=>new post()]);
     }
 
     /**
@@ -55,7 +55,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        echo("Contenido: ".$post);
     }
 
     /**
@@ -66,7 +66,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        echo view('dashboards.posts.edit',['posts' => $post]);
     }
 
     /**
@@ -76,9 +76,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(StorePostPost $request, Post $post)
     {
-        //
+        $post->update($request->validated());
+        return back()->with('status','Muchas gracias, tu post ha sido actualizado con éxito.');
     }
 
     /**
